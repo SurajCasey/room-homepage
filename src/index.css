@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-grey800: #444444;
+    --color-grey500: #A0A0A0;
+    --color-grey200: #D8D8D8;
+    --color-grey100: #EFEFEF;
+    --color-grey50: #FAFAFA;
+}
+
+.effecthover{
+    @apply  relative after:content-[''] after:absolute 
+    after:left-1/2 after:-translate-x-1/2 after:bottom-0 
+    after:w-0 after:h-[2px] after:bg-white 
+    after:transition-all after:duration-100 hover:after:w-4
+}
+
+body{
+    font-family: "League Spartan", sans-serif;;
+}
