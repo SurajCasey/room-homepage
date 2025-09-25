@@ -1,12 +1,17 @@
 import Logo from "../assets/images/logo.svg"
 
-const NavBar = () => {
+interface NavBarProps {
+  className?: string;
+}
+
+const NavBar = ({ className = ""}: NavBarProps) => {
     
   return (
     <header
-      className="bg-black w-full flex gap-14 justify-center items-center"
+      className={`hidden lg:flex gap-14 justify-center items-center 
+         ${className}`}
     >
-      <img src={Logo} alt="Logo" />
+      <img src={Logo} alt="Logo" className="cursor-pointer"/>
       <nav className="text-white flex gap-8 font-semibold leading-[100%] 
         tracking-[-0.7px]">
         <a href="#" 

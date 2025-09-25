@@ -9,7 +9,10 @@ const Content = () => {
         src={DarkImage} 
         alt="Image of table and sofa" 
       />
-      <div className='flex flex-col justify-center mx-8 sm:mx-16 gap-4 lg:mx-12 lg:flex-1 lg:px-12 lg:py-8 lg:overflow-hidden lg:h-full'>
+      <div 
+        className='flex flex-col justify-center mx-8 sm:mx-16 gap-4 
+          lg:mx-0 xl:mx-12 lg:flex-1 lg:px-12 lg:py-8 lg:overflow-hidden lg:h-full'
+      >
         <h2 className='font-bold text-sm leading-[22px] tracking-[5.83px] lg:flex-shrink-0'>
           ABOUT OUR FURNITURE
         </h2>

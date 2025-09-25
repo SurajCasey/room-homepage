@@ -13,6 +13,7 @@ import DesktopImage2 from '../assets/images/desktop-image-hero-2.jpg'
 import DesktopImage3 from '../assets/images/desktop-image-hero-3.jpg'
 import CarouselButton from '../components/CarouselButton'
 import ShopNow from '../components/ShopNow'
+import NavBar from '../components/NavBar'
 
 const Hero = () => {
     const images = [
@@ -39,6 +40,7 @@ const Hero = () => {
         }
     ]
     const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [showMenu, setShowMenu] = useState<boolean>(false);
 
     const handlePrevious = () => {
         setCurrentIndex(prev => prev === 0 ? images.length - 1 : prev - 1);
@@ -47,13 +49,18 @@ const Hero = () => {
         setCurrentIndex(prev => prev === images.length - 1 ? 0 : prev + 1);
     }
 
+    const toggleMenu = () =>{
+        setShowMenu( prev => !prev);
+    }
+
     return (
-        <section className='lg:flex lg:h-[67vh] lg:w-screen'>
+        <section className='lg:flex lg:h-[67vh] lg:w-screen relative'>
+            <NavBar className='absolute top-16 left-16 z-20'/>
             <div className='relative lg:w-[58%]'>
-                <nav className='absolute w-full flex items-center mt-12 z-10'>
+                <nav className='absolute w-full flex items-center mt-12 z-10 lg:hidden'>
                     <button
                         className='absolute left-6'
-                        // onClick={showMenu}
+                        onClick={toggleMenu}
                     >
                         <img src={Hamburger} alt='click for menu' />
                     </button>
@@ -61,6 +68,7 @@ const Hero = () => {
                         <img src={Logo} alt="Room homepage logo" />
                     </div>
                 </nav>
+                
                 {/* Mobile */}
                 <div className='sm:hidden'>
                     <img 
