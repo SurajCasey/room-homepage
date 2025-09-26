@@ -1,11 +1,23 @@
 import Close from '../assets/images/icon-close.svg'
 
-const Menu = () => {
-  return (
+interface MenuProps {
+    className ?: string;
+    onClose: () => void;
+}
+
+const Menu = ({className= "", onClose}: MenuProps) => {
+    const closeMenu = () =>{
+        onClose();
+    }
+
+  return (    
     <div
-        className='flex justify-between my-12 mx-6 sm:mx-16'
+        className={`flex justify-between py-12 px-6 sm:px-16 ${className}`}
     >
-        <button>
+        <button
+            onClick={closeMenu}
+            className='cursor-pointer'
+        >
             <img src={Close} alt="close button" />
         </button>
         <menu 

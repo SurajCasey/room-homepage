@@ -14,6 +14,7 @@ import DesktopImage3 from '../assets/images/desktop-image-hero-3.jpg'
 import CarouselButton from '../components/CarouselButton'
 import ShopNow from '../components/ShopNow'
 import NavBar from '../components/NavBar'
+import Menu from '../components/Menu'
 
 const Hero = () => {
     const images = [
@@ -55,11 +56,21 @@ const Hero = () => {
 
     return (
         <section className='lg:flex lg:h-[67vh] lg:w-screen relative'>
+            {showMenu && (
+                <div className='lg:hidden w-screen h-[100vh] absolute inset-0 z-20 '>
+                    <Menu 
+                        onClose={toggleMenu}
+                        className='bg-white h-fit'
+                    />
+                    <div className='bg-black/50 h-full'></div>
+                </div>
+            )}
+
             <NavBar className='absolute top-16 left-16 z-20'/>
             <div className='relative lg:w-[58%]'>
                 <nav className='absolute w-full flex items-center mt-12 z-10 lg:hidden'>
                     <button
-                        className='absolute left-6'
+                        className='absolute left-6 cursor-pointer'
                         onClick={toggleMenu}
                     >
                         <img src={Hamburger} alt='click for menu' />
